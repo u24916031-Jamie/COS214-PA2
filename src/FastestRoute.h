@@ -1,12 +1,11 @@
-#pragma once
+#ifndef FASTESTROUTE_H
+#define FASTESTROUTE_H
 
-#include "Route.h"
+class FastestRoute : Route {
 
-
-class FastestRoute : public Route {
 
 public:
 	Settlement* getNextSettlement(Place& map);
-
-
 };
+
+#endif

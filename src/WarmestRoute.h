@@ -1,12 +1,11 @@
-#pragma once
+#ifndef WARMESTROUTE_H
+#define WARMESTROUTE_H
 
-#include "Route.h"
+class WarmestRoute : Route {
 
-
-class WarmestRoute : public Route {
 
 public:
 	Settlement* getNextSettlement(Place& map);
-
-
 };
+
+#endif
