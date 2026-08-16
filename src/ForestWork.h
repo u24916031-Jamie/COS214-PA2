@@ -11,8 +11,9 @@ public:
 	ForestWork(std::string name, std::string description, std::string workMessage) : Work(name, description, workMessage) {};
 
 	void work(Traveller& traveller) {
-		std::cout << workMessage << std::endl;
+		std::cout << m_workMessage << std::endl;
 	}
+	virtual ~ForestWork() {};
 };
 
 #endif

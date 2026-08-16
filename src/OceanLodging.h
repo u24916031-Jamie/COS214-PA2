@@ -8,7 +8,12 @@ class OceanLodging : Lodging {
 
 
 public:
-	void sleep(Traveller& traveller);
+	OceanLodging(std::string name, std::string description, std::string sleepMessage) : Lodging(name, description, sleepMessage) {};
+
+	void sleep(Traveller& traveller) {
+		std::cout << m_sleepMessage << std::endl;
+	}
+	virtual ~OceanLodging() {};
 };
 
 #endif

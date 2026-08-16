@@ -3,6 +3,8 @@
 
 #include "Settlement.h"
 #include "Traveller.h"
+#include <iostream>
+#include <string>
 
 class SettlementFeature : public Settlement {
 private:
@@ -10,11 +12,18 @@ private:
 
 public:
 	SettlementFeature() = delete;
-	SettlementFeature(std::string name, std::string description);
+	SettlementFeature(std::string name, std::string description) :Settlement(name, description) {};
 
 
 
-	void addSettlement(Settlement* param);
+	void addSettlement(Settlement* param) {
+		if (settlement == nullptr) {
+			settlement = param;
+		}
+		else {
+			settlement->addSettlement(param);
+		}
+	}
 
 	virtual void enter(Traveller& traveller) {
 		settlement->enter(traveller);
@@ -36,7 +45,9 @@ public:
 		settlement->eat(traveller);
 	};
 
-	virtual ~SettlementFeature();
+	virtual ~SettlementFeature() {
+		delete settlement;
+	};
 };
 
 #endif

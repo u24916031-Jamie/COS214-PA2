@@ -7,7 +7,12 @@ class ForestFood : Food {
 
 
 public:
-	void eat(Traveller& traveller);
+	ForestFood(std::string name, std::string description, std::string eatMessage) : Food(name, description, eatMessage) {};
+
+	void eat(Traveller& traveller) {
+		std::cout << m_eatMessage << std::endl;
+	};
+	virtual ~ForestFood() {};
 };
 
 #endif

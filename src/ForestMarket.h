@@ -8,7 +8,12 @@ class ForestMarket : Market {
 
 
 public:
-	void shop(Traveller& traveller);
+	ForestMarket(std::string name, std::string description, std::string message) : Market(name, description, message) {};
+
+	void shop(Traveller& traveller) {
+		std::cout << m_shopMessage << std::endl;
+	}
+	virtual ~ForestMarket() {};
 };
 
 #endif

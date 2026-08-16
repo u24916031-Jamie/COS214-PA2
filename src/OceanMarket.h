@@ -10,7 +10,12 @@ class OceanMarket : Market {
 
 
 public:
-	void shop(Traveller& traveller);
+	OceanMarket(std::string name, std::string description, std::string shopMessage) : Market(name, description, shopMessage) {};
+
+	void shop(Traveller& traveller) {
+		std::cout << m_shopMessage << std::endl;
+	}
+	virtual ~OceanMarket() {};
 };
 
 #endif
