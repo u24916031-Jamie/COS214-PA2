@@ -8,7 +8,11 @@ class ForestWork : Work {
 
 
 public:
-	void work(Traveller traveller);
+	ForestWork(std::string name, std::string description, std::string workMessage) : Work(name, description, workMessage) {};
+
+	void work(Traveller& traveller) {
+		std::cout << workMessage << std::endl;
+	}
 };
 
 #endif

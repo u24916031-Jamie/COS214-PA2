@@ -7,6 +7,7 @@ public:
 	int price;
 
 	virtual void sleep(Traveller traveller) = 0;
+	virtual ~Lodging() {};
 };
 
 #endif

@@ -9,22 +9,34 @@ private:
 	Settlement* settlement;
 
 public:
+	SettlementFeature() = delete;
+	SettlementFeature(std::string name, std::string description);
 
-	void getName();
 
-	void getDescription();
 
 	void addSettlement(Settlement* param);
 
-	void enter(Traveller& traveller);
+	virtual void enter(Traveller& traveller) {
+		settlement->enter(traveller);
+	};
 
-	void shop(Traveller& traveller);
+	virtual void shop(Traveller& traveller) {
+		settlement->shop(traveller);
+	};
 
-	void sleep(Traveller& traveller);
+	virtual void sleep(Traveller& traveller) {
+		settlement->sleep(traveller);
+	};
 
-	void work(Traveller& traveller);
+	virtual void work(Traveller& traveller) {
+		settlement->work(traveller);
+	};
 
-	void eat(Traveller& traveller);
+	virtual void eat(Traveller& traveller) {
+		settlement->eat(traveller);
+	};
+
+	virtual ~SettlementFeature();
 };
 
 #endif

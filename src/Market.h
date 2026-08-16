@@ -7,6 +7,7 @@ public:
 	int price;
 
 	virtual void shop(Traveller traveller) = 0;
+	virtual ~Market() {};
 };
 
 #endif

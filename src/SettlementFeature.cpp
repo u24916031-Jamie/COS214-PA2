@@ -1,18 +1,7 @@
 #include "SettlementFeature.h"
 
-void SettlementFeature::getName() {
-	if (settlement == nullptr) {
-		return;
-	}
-	settlement->getName();
-}
 
-void SettlementFeature::getDescription() {
-	if (settlement == nullptr) {
-		return;
-	}
-	settlement->getDescription();
-}
+SettlementFeature::SettlementFeature(std::string name, std::string description) : Settlement(name, description) {}
 
 void SettlementFeature::addSettlement(Settlement* param) {
 	if (settlement == nullptr) {
@@ -65,5 +54,12 @@ void SettlementFeature::eat(Traveller& traveller) {
 	}
 	else {
 		settlement->enter(traveller);
+	}
+}
+
+SettlementFeature::~SettlementFeature() {
+	if (settlement != nullptr) {
+		delete settlement;
+		settlement = nullptr;
 	}
 }

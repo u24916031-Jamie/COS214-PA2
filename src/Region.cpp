@@ -1,11 +1,20 @@
 #include "Region.h"
 
-void Region::addPlace(Place param) {
-	// TODO - implement Region::addPlace
-	throw "Not yet implemented";
+Region::Region(std::string name, std::string description) : Place(name, description, false) {}
+
+void Region::addPlace(Place* param) {
+	children.push_back(param);
 }
 
-Place* Region::getChildren() {
-	// TODO - implement Region::getChildren
-	throw "Not yet implemented";
+std::vector<Place*>& Region::getChildren() {
+	return children;
+}
+
+Region::~Region() {
+	for (const Place*& child : children) {
+		if (child != nullptr) {
+			delete child;
+			child = nullptr;
+		}
+	}
 }

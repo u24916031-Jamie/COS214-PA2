@@ -10,6 +10,8 @@ private:
 public:
 
 	virtual void eat(Traveller traveller) = 0;
+
+	virtual ~Food() {};
 };
 
 #endif
