@@ -1,12 +1,11 @@
-#pragma once
+#ifndef CHEAPESTROUTE_H
+#define CHEAPESTROUTE_H
 
-#include "Route.h"
+class CheapestRoute : Route {
 
-
-class CheapestRoute : public Route {
 
 public:
 	Settlement* getNextSettlement(Place& map);
-
-
 };
+
+#endif
