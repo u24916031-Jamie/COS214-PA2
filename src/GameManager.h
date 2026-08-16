@@ -1,6 +1,12 @@
 #ifndef GAMEMANAGER_H
 #define GAMEMANAGER_H
 
+#include "Place.h"
+#include "Settlement.h"
+#include "TransportationMethod.h"
+#include "Traveller.h"
+#include "Route.h"
+
 class GameManager {
 
 private:

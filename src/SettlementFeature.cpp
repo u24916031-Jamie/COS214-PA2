@@ -1,41 +1,69 @@
 #include "SettlementFeature.h"
 
 void SettlementFeature::getName() {
-	// TODO - implement SettlementFeature::getName
-	throw "Not yet implemented";
+	if (settlement == nullptr) {
+		return;
+	}
+	settlement->getName();
 }
 
 void SettlementFeature::getDescription() {
-	// TODO - implement SettlementFeature::getDescription
-	throw "Not yet implemented";
+	if (settlement == nullptr) {
+		return;
+	}
+	settlement->getDescription();
 }
 
-void* SettlementFeature::addSettlement(Settlement param) {
-	// TODO - implement SettlementFeature::addSettlement
-	throw "Not yet implemented";
+void SettlementFeature::addSettlement(Settlement* param) {
+	if (settlement == nullptr) {
+		settlement = param;
+	}
+	else {
+		settlement->addSettlement(param);
+	}
 }
 
-void SettlementFeature::enter(Traveller traveller) {
-	// TODO - implement SettlementFeature::enter
-	throw "Not yet implemented";
+void SettlementFeature::enter(Traveller& traveller) {
+	if (settlement == nullptr) {
+		return;
+	}
+	else {
+		settlement->enter(traveller);
+	}
 }
 
-void SettlementFeature::shop(Traveller traveller) {
-	// TODO - implement SettlementFeature::shop
-	throw "Not yet implemented";
+void SettlementFeature::shop(Traveller& traveller) {
+	if (settlement == nullptr) {
+		return;
+	}
+	else {
+		settlement->enter(traveller);
+	}
 }
 
-void SettlementFeature::sleep(Traveller traveller) {
-	// TODO - implement SettlementFeature::sleep
-	throw "Not yet implemented";
+void SettlementFeature::sleep(Traveller& traveller) {
+	if (settlement == nullptr) {
+		return;
+	}
+	else {
+		settlement->enter(traveller);
+	}
 }
 
-void SettlementFeature::work(Traveller traveller) {
-	// TODO - implement SettlementFeature::work
-	throw "Not yet implemented";
+void SettlementFeature::work(Traveller& traveller) {
+	if (settlement == nullptr) {
+		return;
+	}
+	else {
+		settlement->enter(traveller);
+	}
 }
 
-void SettlementFeature::eat(Traveller traveller) {
-	// TODO - implement SettlementFeature::eat
-	throw "Not yet implemented";
+void SettlementFeature::eat(Traveller& traveller) {
+	if (settlement == nullptr) {
+		return;
+	}
+	else {
+		settlement->enter(traveller);
+	}
 }

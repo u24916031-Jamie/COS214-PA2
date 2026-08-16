@@ -1,21 +1,23 @@
 #ifndef PLACE_H
 #define PLACE_H
-
+#include <string>
 class Place {
 
 private:
-	string name;
-	string description;
-	boolean isSettlement;
+	bool m_isSettlement;
+	std::string name;
+	std::string description;
 
 public:
-	string getName();
+	Place();
+	Place(std::string name, std::string description, bool isSettlement);
+	std::string getName();
 
-	string getDescription();
+	std::string getDescription();
 
 	virtual void addPlace(Place param) = 0;
 
-	boolean isSettlement();
+	bool isSettlement();
 };
 
 #endif
