@@ -6,28 +6,22 @@
 
 class Settlement : Place {
 
-protected:
-	std::string enterMessage;
-	std::string shopMessage;
-	std::string sleepMessage;
-	std::string workMessage;
-	std::string eatMessage;
+
 
 public:
-	Settlement();
-	Settlement(std::string name, std::string description);
+	Settlement() = delete;
+	Settlement(std::string name, std::string description) : Place(name, description, true) {};
 
 
-	void enter(Traveller& traveller);
+	virtual void enter(Traveller& traveller) = 0;
+	virtual void shop(Traveller& traveller) = 0;
+	virtual void sleep(Traveller& traveller) = 0;
+	virtual void work(Traveller& traveller) = 0;
+	virtual void eat(Traveller& traveller) = 0;
 
-	void shop(Traveller& traveller);
-
-	void sleep(Traveller& traveller);
-
-	void work(Traveller& traveller);
-
-	void eat(Traveller& traveller);
 	virtual void addSettlement(Settlement* param) = 0;
+
+	virtual ~Settlement() {};
 };
 
 #endif
