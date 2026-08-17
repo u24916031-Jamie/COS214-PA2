@@ -1,11 +1,14 @@
 #ifndef HORSEBACK_H
 #define HORSEBACK_H
 
-class Horseback : TransportationMethod {
+#include "TransportationMethod.h"
 
-
+class Horseback : public TransportationMethod 
+{
 public:
-	boolean leave(Traveller& traveller);
+	Horseback();
+	virtual ~Horseback();
+	virtual bool leave(Traveller& traveller);
 };
 
 #endif
