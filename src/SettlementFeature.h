@@ -12,7 +12,7 @@ private:
 
 public:
 	SettlementFeature() = delete;
-	SettlementFeature(std::string name, std::string description) :Settlement(name, description) {};
+	SettlementFeature(std::string name, std::string description) :Settlement(name, description), settlement(nullptr) {};
 
 
 
@@ -44,6 +44,10 @@ public:
 	virtual void eat(Traveller& traveller) {
 		settlement->eat(traveller);
 	};
+
+	virtual int getTravelCost() const {return settlement ? settlement->getTravelCost():0;}
+	virtual int getTravelTime() const {return settlement ? settlement->getTravelTime():0;}
+	virtual int getTemperature() const {return settlement ? settlement->getTemperature():0;}
 
 	virtual ~SettlementFeature() {
 		delete settlement;

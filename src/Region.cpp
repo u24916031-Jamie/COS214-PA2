@@ -1,24 +1,34 @@
-#ifndef PLACE_H
-#define PLACE_H
+#include "Region.h"
+#include "Settlement.h"
+#include <iostream>
 
-#include <string>
+Region::Region(const std::string& name, const std::string& description): Place(name, description) {}
 
-class Place 
+Region::~Region()
 {
-private:
-	std::string name;
-	std::string description;
+	for (size_t i = 0; i < children.size(); ++i) delete children[i];
+}
 
-protected:
-	Place(const std::string& name, const std::string& description);
+bool Region::isSettlement() const {return false;}
 
-public:
-	virtual ~Place();
-	std::string getName() const;
-	std::string getDescription() const;
-	virtual bool isSettlement() const = 0;
-	virtual bool addPlace(Place* place);
-	virtual void print(int depth = 0) const = 0;
-};
+bool Region::addPlace(Place* place)
+{
+	if (!place || place == this) return false;
+	children.push_back(place);
+	return true;
+}
 
-#endif
+void Region::print(int depth) const
+{
+	std::cout << std::string(depth * 2, ' ') << "[Region] " << getName() << " - " << getDescription() << std::endl;
+	for (size_t i = 0; i < children.size(); ++i) children[i]->print(depth + 1);
+}
+
+void Region::collectSettlements(std::vector<Settlement*>& out)
+{
+	for (size_t i = 0; i < children.size(); ++i) 
+	{
+		if (children[i]->isSettlement()) out.push_back(static_cast<Settlement*>(children[i]));
+		else static_cast<Region*>(children[i])->collectSettlements(out);
+	}
+}

@@ -2,37 +2,27 @@
 #define PLACE_H
 
 #include <string>
+#include <vector>
+
+class Settlement;
 
 class Place 
 {
 private:
 	std::string name;
 	std::string description;
-	bool isSettlement;
 
 protected:
 	Place(const std::string& name, const std::string& description);
 
 public:
-
-	Place(std::string name, std::string description, bool isSettlement){
-		this->name = name;
-		this->description = description;
-		this->isSettlement = isSettlement;
-	}
-	std::string getName() const{
-		return name;
-	}
-
-	std::string getDescription()const{
-		return description;
-	}
-
-	virtual void addPlace(Place* param) = 0;
 	virtual ~Place();
-	bool isSettlement(){
-		return isSettlement;
-	}
+	std::string getName() const;
+	std::string getDescription() const;
+	virtual bool isSettlement() const = 0;
+	virtual bool addPlace(Place* place);
+	virtual void print(int depth = 0) const = 0;
+	virtual void collectSettlements(std::vector<Settlement*>& out) = 0;
 };
 
 #endif

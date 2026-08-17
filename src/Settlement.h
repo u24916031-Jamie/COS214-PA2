@@ -3,6 +3,9 @@
 
 #include "Place.h"
 #include <string>
+#include <vector>
+
+class Traveller;
 
 class Settlement : public Place {
 
@@ -14,6 +17,11 @@ protected:
 	std::string workMessage;
 	std::string eatMessage;
 
+	int travelCost;
+	int travelTime;
+	int temperature;
+
+	Settlement(const std::string& name, const std::string& description);
 	Settlement(const std::string& name, const std::string& description,const std::string& enterMessage, const std::string& shopMessage,const std::string& sleepMessage, const std::string& workMessage,const std::string& eatMessage);
 
 public:
@@ -26,6 +34,13 @@ public:
 	virtual void sleep(Traveller& traveller);
 	virtual void work(Traveller& traveller);
 	virtual void eat(Traveller& traveller);
+
+	virtual void collectSettlements(std::vector<Settlement*>& out);
+	virtual void addSettlement(Settlement*) {}
+	virtual int getTravelCost() const;
+	virtual int getTravelTime() const;
+	virtual int getTemperature() const;
+	void setTravelStats(int cost, int time, int temp);
 };
 
 #endif

@@ -5,7 +5,7 @@
 #include "Settlement.h"
 
 
-class ForestFactory : BiomeFactory {
+class ForestFactory : public BiomeFactory {
 private:
 
 // 1. City Names
