@@ -1,11 +1,15 @@
 #ifndef WARMESTROUTE_H
 #define WARMESTROUTE_H
 
-class WarmestRoute : Route {
+#include "Route.h"
 
-
+class WarmestRoute : public Route 
+{
 public:
-	Settlement* getNextSettlement(Place& map);
+	WarmestRoute();
+	virtual ~WarmestRoute();
+	virtual Settlement* getNextSettlement(Place& map, Settlement* current);
+	virtual std::string getName() const;
 };
 
 #endif

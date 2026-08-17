@@ -1,11 +1,15 @@
 #ifndef CHEAPESTROUTE_H
 #define CHEAPESTROUTE_H
 
-class CheapestRoute : Route {
+#include "Route.h"
 
-
+class CheapestRoute : public Route 
+{
 public:
-	Settlement* getNextSettlement(Place& map);
+	CheapestRoute();
+	virtual ~CheapestRoute();
+	virtual Settlement* getNextSettlement(Place& map, Settlement* current);
+	virtual std::string getName() const;
 };
 
 #endif

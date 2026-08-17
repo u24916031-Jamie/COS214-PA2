@@ -1,11 +1,15 @@
 #ifndef FASTESTROUTE_H
 #define FASTESTROUTE_H
 
-class FastestRoute : Route {
+#include "Route.h"
 
-
+class FastestRoute : public Route 
+{
 public:
-	Settlement* getNextSettlement(Place& map);
+	FastestRoute();
+	virtual ~FastestRoute();
+	virtual Settlement* getNextSettlement(Place& map, Settlement* current);
+	virtual std::string getName() const;
 };
 
 #endif
