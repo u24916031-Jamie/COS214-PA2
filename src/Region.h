@@ -4,20 +4,21 @@
 #include "Place.h"
 #include <vector>
 
-class Region : Place {
-
-public:
+class Region : public Place 
+{
+private:
 	std::vector<Place*> children;
 
+	Region(const Region&);
+	Region& operator=(const Region&);
 
-
-	Region(std::string name, std::string description);
-
-	void addPlace(Place* param);
-
-	std::vector<Place*>& getChildren();
-
+public:
+	Region(const std::string& name, const std::string& description);
 	virtual ~Region();
+	virtual bool isSettlement() const;
+	virtual bool addPlace(Place* place);
+	const std::vector<Place*>& getChildren() const;
+	virtual void print(int depth = 0) const;
 };
 
 #endif
