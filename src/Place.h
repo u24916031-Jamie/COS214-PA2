@@ -1,23 +1,24 @@
 #ifndef PLACE_H
 #define PLACE_H
-#include <string>
-class Place {
 
+#include <string>
+
+class Place 
+{
 private:
-	bool m_isSettlement;
 	std::string name;
 	std::string description;
 
+protected:
+	Place(const std::string& name, const std::string& description);
+
 public:
-	Place();
-	Place(std::string name, std::string description, bool isSettlement);
-	std::string getName();
-
-	std::string getDescription();
-
-	virtual void addPlace(Place param) = 0;
-	virtual ~Place() {};
-	bool isSettlement();
+	virtual ~Place();
+	std::string getName() const;
+	std::string getDescription() const;
+	virtual bool isSettlement() const = 0;
+	virtual bool addPlace(Place* place);
+	virtual void print(int depth = 0) const = 0;
 };
 
 #endif
