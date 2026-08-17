@@ -1,24 +1,17 @@
-#ifndef REGION_H
-#define REGION_H
+#ifndef ROUTE_H
+#define ROUTE_H
 
-#include "Place.h"
-#include <vector>
+#include <string>
 
-class Region : public Place 
+class Place;
+class Settlement;
+
+class Route 
 {
-private:
-	std::vector<Place*> children;
-
-	Region(const Region&);
-	Region& operator=(const Region&);
-
 public:
-	Region(const std::string& name, const std::string& description);
-	virtual ~Region();
-	virtual bool isSettlement() const;
-	virtual bool addPlace(Place* place);
-	const std::vector<Place*>& getChildren() const;
-	virtual void print(int depth = 0) const;
+	virtual ~Route();
+	virtual Settlement* getNextSettlement(Place& map, Settlement* current) = 0;
+	virtual std::string getName() const = 0;
 };
 
 #endif
