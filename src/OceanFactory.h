@@ -5,7 +5,7 @@
 #include <vector>
 #include <string>
 
-class OceanFactory : BiomeFactory {
+class OceanFactory : public BiomeFactory {
 private:
 
 int cityIdx = 0;
