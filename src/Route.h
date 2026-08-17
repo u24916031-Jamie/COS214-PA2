@@ -1,11 +1,17 @@
 #ifndef ROUTE_H
 #define ROUTE_H
 
-class Route {
+#include <string>
 
+class Place;
+class Settlement;
 
+class Route 
+{
 public:
-	virtual Settlement* getNextSettlement(Place& map) = 0;
+	virtual ~Route();
+	virtual Settlement* getNextSettlement(Place& map, Settlement* current) = 0;
+	virtual std::string getName() const = 0;
 };
 
 #endif
