@@ -1,25 +1,18 @@
 #include "Place.h"
+#include <iostream>
 
-Place::Place() {
-	this->name = "";
-	this->description = "";
-	this->m_isSettlement = false;
-}
+Place::Place(const std::string& name, const std::string& description): name(name), description(description) {}
 
-Place::Place(std::string name, std::string description, bool isSettlement) {
-	this->name = name;
-	this->description = description;
-	this->m_isSettlement = isSettlement;
-}
+Place::~Place() {}
 
-std::string Place::getName() {
-	return this->name;
-}
+std::string Place::getName() const { return name; }
+std::string Place::getDescription() const { return description; }
 
-std::string Place::getDescription() {
-	return this->description;
-}
-
-bool Place::isSettlement() {
-	return m_isSettlement;
+bool Place::addPlace(Place* place) 
+{
+	if (place) {
+		std::cout << place->getName() << " cannot be added to " << name
+		          << ": it is not a region." << std::endl;
+	}
+	return false;
 }
