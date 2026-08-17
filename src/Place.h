@@ -20,16 +20,16 @@ public:
 		this->description = description;
 		this->isSettlement = isSettlement;
 	}
-	std::string getName(){
+	std::string getName() const{
 		return name;
 	}
 
-	std::string getDescription(){
+	std::string getDescription()const{
 		return description;
 	}
 
 	virtual void addPlace(Place* param) = 0;
-	virtual ~Place() {};
+	virtual ~Place();
 	bool isSettlement(){
 		return isSettlement;
 	}

@@ -22,16 +22,10 @@ public:
 	virtual void print(int depth = 0) const;
 
 	virtual void enter(Traveller& traveller) = 0;
-	virtual void shop(Traveller& traveller) = 0;
-	virtual void sleep(Traveller& traveller) = 0;
-	virtual void work(Traveller& traveller) = 0;
-	virtual void eat(Traveller& traveller) = 0;
-
-	virtual void addSettlement(Settlement* param) = 0;
-	virtual void addPlace(Place* param){};
-
-
-
+	virtual void shop(Traveller& traveller);
+	virtual void sleep(Traveller& traveller);
+	virtual void work(Traveller& traveller);
+	virtual void eat(Traveller& traveller);
 };
 
 #endif
