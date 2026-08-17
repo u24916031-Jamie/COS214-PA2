@@ -1,16 +1,14 @@
 #ifndef OCEANCITY_H
 #define OCEANCITY_H
 
-#include "City.h"
-#include "Traveller.h"
+#include "Settlement.h"
 
-class OceanCity : City {
-
-
+class OceanCity : public Settlement 
+{
 public:
-	OceanCity(std::string name, std::string description, std::string enterMessage) : City(name, description, enterMessage) {};
-
-	void enter(Traveller& traveller);
+	OceanCity(const std::string& name, const std::string& description);
+	virtual ~OceanCity();
+	virtual void enter(Traveller& traveller);
 };
 
 #endif
