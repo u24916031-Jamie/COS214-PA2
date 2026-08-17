@@ -1,16 +1,14 @@
 #ifndef FORESTCITY_H
 #define FORESTCITY_H
 
-#include "City.h"
-#include "Traveller.h"
+#include "Settlement.h"
 
-class ForestCity : City {
-
-
+class ForestCity : public Settlement 
+{
 public:
-	ForestCity(std::string name, std::string description, std::string enterMessage) : City(name, description, enterMessage) {};
-	void enter(Traveller& traveller);
-	virtual ~ForestCity() {};
+	ForestCity(const std::string& name, const std::string& description);
+	virtual ~ForestCity();
+	virtual void enter(Traveller& traveller);
 };
 
 #endif
