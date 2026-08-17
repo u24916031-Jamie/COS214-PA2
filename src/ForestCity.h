@@ -9,8 +9,6 @@
 class ForestCity : public City {
 private:
 
-
-
 public:
 	ForestCity(std::string name, std::string description, std::string enterMessage) : City(name, description, enterMessage) {};
 	void enter(Traveller& traveller) {

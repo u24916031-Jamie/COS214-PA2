@@ -7,6 +7,7 @@
 class OceanCity : public City {
 
 
+
 public:
 	OceanCity(std::string name, std::string description, std::string enterMessage) : City(name, description, enterMessage) {};
 

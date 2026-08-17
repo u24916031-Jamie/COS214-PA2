@@ -1,20 +1,24 @@
-#include "Region.h"
+#ifndef PLACE_H
+#define PLACE_H
 
-Region::Region(std::string name, std::string description) : Place(name, description, false) {}
+#include <string>
 
-void Region::addPlace(Place* param) {
-	children.push_back(param);
-}
+class Place 
+{
+private:
+	std::string name;
+	std::string description;
 
-std::vector<Place*>& Region::getChildren() {
-	return children;
-}
+protected:
+	Place(const std::string& name, const std::string& description);
 
-Region::~Region() {
-	for (const Place*& child : children) {
-		if (child != nullptr) {
-			delete child;
-			child = nullptr;
-		}
-	}
-}
+public:
+	virtual ~Place();
+	std::string getName() const;
+	std::string getDescription() const;
+	virtual bool isSettlement() const = 0;
+	virtual bool addPlace(Place* place);
+	virtual void print(int depth = 0) const = 0;
+};
+
+#endif
