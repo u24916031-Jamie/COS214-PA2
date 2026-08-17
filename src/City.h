@@ -22,7 +22,6 @@ public:
 	virtual void work(Traveller& traveller){};
 	virtual void eat(Traveller& traveller){};
 	virtual void addSettlement(Settlement* param){};
-	virtual void addPlace(Place* param){};
 
 
 	virtual ~City() {};
