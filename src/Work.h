@@ -12,7 +12,6 @@ public:
 		m_workMessage = workMessage;
 	};
 
-	virtual void work(Traveller traveller){};
 	virtual ~Work() {};
 };
 

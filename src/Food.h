@@ -13,7 +13,6 @@ public:
 		m_eatMessage = eatMessage;
 	};
 
-	virtual void eat(Traveller traveller){};
 	virtual ~Food() {};
 };
 

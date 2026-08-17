@@ -13,7 +13,6 @@ public:
 		m_sleepMessage = sleepMessage;
 	};
 
-	virtual void sleep(Traveller traveller){};
 	virtual ~Lodging() {};
 };
 

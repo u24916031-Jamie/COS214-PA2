@@ -12,7 +12,6 @@ public:
 		m_shopMessage = shopMessage;
 	};
 
-	virtual void shop(Traveller traveller){};
 	virtual ~Market() {};
 };
 
