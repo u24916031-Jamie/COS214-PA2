@@ -1,11 +1,14 @@
 #ifndef MERCHANTCARAVAN_H
 #define MERCHANTCARAVAN_H
 
-class MerchantCaravan : TransportationMethod {
+#include "TransportationMethod.h"
 
-
+class MerchantCaravan : public TransportationMethod 
+{
 public:
-	boolean leave(Traveller& traveller);
+	MerchantCaravan();
+	virtual ~MerchantCaravan();
+	virtual bool leave(Traveller& traveller);
 };
 
 #endif

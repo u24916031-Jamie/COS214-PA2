@@ -1,11 +1,14 @@
 #ifndef TELEPORTATIONCIRCLE_H
 #define TELEPORTATIONCIRCLE_H
 
-class TeleportationCircle : TransportationMethod {
+#include "TransportationMethod.h"
 
-
+class TeleportationCircle : public TransportationMethod 
+{
 public:
-	boolean leave(Traveller& traveller);
+	TeleportationCircle();
+	virtual ~TeleportationCircle();
+	virtual bool leave(Traveller& traveller);
 };
 
 #endif
