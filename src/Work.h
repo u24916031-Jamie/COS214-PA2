@@ -3,7 +3,7 @@
 #include "SettlementFeature.h"
 #include <iostream>
 
-class Work : SettlementFeature {
+class Work : public SettlementFeature {
 protected:
 	int pay;
 	std::string m_workMessage;
@@ -12,7 +12,7 @@ public:
 		m_workMessage = workMessage;
 	};
 
-	virtual void work(Traveller traveller) = 0;
+	virtual void work(Traveller traveller){};
 	virtual ~Work() {};
 };
 

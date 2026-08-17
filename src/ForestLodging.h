@@ -4,7 +4,7 @@
 #include "Lodging.h"
 #include "Traveller.h"
 
-class ForestLodging : Lodging {
+class ForestLodging : public Lodging {
 
 
 public:

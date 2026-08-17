@@ -5,7 +5,7 @@
 #include "Work.h"
 #include "Traveller.h"
 
-class OceanWork : Work {
+class OceanWork : public Work {
 
 
 

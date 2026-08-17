@@ -3,7 +3,7 @@
 
 #include "SettlementFeature.h"
 
-class Food : SettlementFeature {
+class Food : public SettlementFeature {
 protected:
 	int hunger;
 	std::string m_eatMessage;
@@ -13,7 +13,7 @@ public:
 		m_eatMessage = eatMessage;
 	};
 
-	virtual void eat(Traveller traveller) = 0;
+	virtual void eat(Traveller traveller){};
 	virtual ~Food() {};
 };
 

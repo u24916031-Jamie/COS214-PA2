@@ -2,7 +2,7 @@
 #define LODGING_H
 
 #include "SettlementFeature.h"
-class Lodging : SettlementFeature {
+class Lodging : public SettlementFeature {
 
 protected:
 	int price;
@@ -13,7 +13,7 @@ public:
 		m_sleepMessage = sleepMessage;
 	};
 
-	virtual void sleep(Traveller traveller) = 0;
+	virtual void sleep(Traveller traveller){};
 	virtual ~Lodging() {};
 };
 

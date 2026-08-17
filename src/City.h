@@ -3,9 +3,9 @@
 
 #include "Settlement.h"
 #include "Traveller.h"
+#include "Place.h"
 #include <iostream>
-
-class City : Settlement {
+class City : public Settlement {
 protected:
 	std::string m_enterMessage;
 
@@ -15,7 +15,16 @@ public:
 		m_enterMessage = enterMessage;
 	};
 
-	virtual void enter(Traveller& traveller) = 0;
+	
+	virtual void enter(Traveller& traveller){};
+	virtual void shop(Traveller& traveller){};
+	virtual void sleep(Traveller& traveller){};
+	virtual void work(Traveller& traveller){};
+	virtual void eat(Traveller& traveller){};
+	virtual void addSettlement(Settlement* param){};
+	virtual void addPlace(Place* param){};
+
+
 	virtual ~City() {};
 };
 

@@ -4,7 +4,7 @@
 #include "City.h"
 #include "Traveller.h"
 
-class OceanCity : City {
+class OceanCity : public City {
 
 
 public:

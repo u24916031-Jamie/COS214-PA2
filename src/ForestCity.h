@@ -3,8 +3,12 @@
 
 #include "City.h"
 #include "Traveller.h"
+#include <vector>
+#include <string>
 
-class ForestCity : City {
+class ForestCity : public City {
+private:
+
 
 
 public:

@@ -4,7 +4,7 @@
 #include "Lodging.h"
 #include "Traveller.h"
 
-class OceanLodging : Lodging {
+class OceanLodging : public Lodging {
 
 
 public:

@@ -1,26 +1,46 @@
 #include "OceanFactory.h"
+#include "OceanCity.h"
+#include "OceanWork.h"
+#include "OceanFood.h"
+#include "OceanLodging.h"
+#include "OceanMarket.h"
 
-Settlement* OceanFactory::createSettlement() {
-	// TODO - implement OceanFactory::createSettlement
-	throw "Not yet implemented";
+Settlement* OceanFactory::createCity() {
+	Settlement* ret = new OceanCity(cityNames[cityIdx],cityNames[cityIdx],cityEnter[cityIdx]);
+	cityIdx++;
+	cityIdx %= cityNames.size();
+
+	return ret;
 }
 
-Work* OceanFactory::createWork() {
-	// TODO - implement OceanFactory::createWork
-	throw "Not yet implemented";
+Settlement* OceanFactory::createWork() {
+	Settlement* ret = new OceanWork(jobNames[workIdx],jobNames[workIdx],jobsWork[workIdx]);
+	workIdx++;
+	workIdx %= jobNames.size();
+
+	return ret;
 }
 
-Food* OceanFactory::createFood() {
-	// TODO - implement OceanFactory::createFood
-	throw "Not yet implemented";
+Settlement* OceanFactory::createFood() {
+	Settlement* ret = new OceanFood(foodNames[foodIdx],foodNames[foodIdx],foodEat[foodIdx]);
+	foodIdx++;
+	foodIdx %= foodNames.size();
+
+	return ret;
 }
 
-Lodging* OceanFactory::createLodging() {
-	// TODO - implement OceanFactory::createLodging
-	throw "Not yet implemented";
+Settlement* OceanFactory::createLodging() {
+	Settlement* ret = new OceanLodging(lodgingNames[lodgingIdx],lodgingNames[lodgingIdx],lodgingSleep[lodgingIdx]);
+	lodgingIdx++;
+	lodgingIdx %= lodgingNames.size();
+
+	return ret;
 }
 
-Market* OceanFactory::createMarket() {
-	// TODO - implement OceanFactory::createMarket
-	throw "Not yet implemented";
+Settlement* OceanFactory::createMarket() {
+	Settlement* ret = new OceanMarket(marketNames[marketIdx],marketNames[marketIdx],marketShop[marketIdx]);
+	marketIdx++;
+	marketIdx %= marketNames.size();
+
+	return ret;
 }

@@ -1,26 +1,47 @@
 #include "ForestFactory.h"
+#include "ForestCity.h"
+#include "ForestWork.h"
+#include "ForestFood.h"
+#include "ForestMarket.h"
+#include "ForestLodging.h"
 
-Settlement* ForestFactory::createSettlement() {
-	// TODO - implement ForestFactory::createSettlement
-	throw "Not yet implemented";
+
+Settlement* ForestFactory::createCity() {
+	Settlement* ret = new ForestCity(cityNames[cityIdx],cityNames[cityIdx],cityEnter[cityIdx]);
+	cityIdx++;
+	cityIdx %= cityNames.size();
+
+	return ret;
 }
 
-Work* ForestFactory::createWork() {
-	// TODO - implement ForestFactory::createWork
-	throw "Not yet implemented";
+Settlement* ForestFactory::createWork() {
+	Settlement* ret = new ForestWork(works[workIdx],works[workIdx],jobWork[workIdx]);
+	workIdx++;
+	workIdx %= works.size();
+
+	return ret;
 }
 
-Food* ForestFactory::createFood() {
-	// TODO - implement ForestFactory::createFood
-	throw "Not yet implemented";
+Settlement* ForestFactory::createFood() {
+	Settlement* ret = new ForestFood(foods[foodIdx],foods[foodIdx],foodEat[foodIdx]);
+	foodIdx++;
+	foodIdx %= foods.size();
+
+	return ret;
 }
 
-Lodging* ForestFactory::createLodging() {
-	// TODO - implement ForestFactory::createLodging
-	throw "Not yet implemented";
+Settlement* ForestFactory::createLodging() {
+	Settlement* ret = new ForestLodging(lodgings[lodgingIdx],lodgings[lodgingIdx],lodgingsSleep[lodgingIdx]);
+	lodgingIdx++;
+	lodgingIdx %= lodgings.size();
+
+	return ret;
 }
 
-Market* ForestFactory::createMarket() {
-	// TODO - implement ForestFactory::createMarket
-	throw "Not yet implemented";
+Settlement* ForestFactory::createMarket() {
+	Settlement* ret = new ForestMarket(markets[marketIdx],markets[marketIdx],marketShop[marketIdx]);
+	marketIdx++;
+	marketIdx %= markets.size();
+
+	return ret;
 }

@@ -4,7 +4,7 @@
 #include "Place.h"
 #include "Traveller.h"
 
-class Settlement : Place {
+class Settlement : public Place {
 
 
 
@@ -20,6 +20,8 @@ public:
 	virtual void eat(Traveller& traveller) = 0;
 
 	virtual void addSettlement(Settlement* param) = 0;
+	virtual void addPlace(Place* param){};
+
 
 	virtual ~Settlement() {};
 };

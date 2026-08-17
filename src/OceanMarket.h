@@ -6,7 +6,7 @@
 #include "Traveller.h"
 
 
-class OceanMarket : Market {
+class OceanMarket : public Market {
 
 
 public:

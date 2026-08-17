@@ -3,7 +3,7 @@
 
 #include "Food.h"
 
-class ForestFood : Food {
+class ForestFood : public Food {
 
 
 public:

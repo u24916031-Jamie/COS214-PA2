@@ -2,7 +2,7 @@
 #define MARKET_H
 
 #include "SettlementFeature.h"
-class Market : SettlementFeature {
+class Market : public SettlementFeature {
 
 protected:
 	int price;
@@ -12,7 +12,7 @@ public:
 		m_shopMessage = shopMessage;
 	};
 
-	virtual void shop(Traveller traveller) = 0;
+	virtual void shop(Traveller traveller){};
 	virtual ~Market() {};
 };
 

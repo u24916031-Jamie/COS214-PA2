@@ -4,7 +4,7 @@
 #include "Food.h"
 #include "Traveller.h"
 
-class OceanFood : Food {
+class OceanFood : public Food {
 
 
 public:

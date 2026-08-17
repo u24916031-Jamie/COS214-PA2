@@ -15,7 +15,7 @@ public:
 
 	std::string getDescription();
 
-	virtual void addPlace(Place param) = 0;
+	virtual void addPlace(Place* param) = 0;
 	virtual ~Place() {};
 	bool isSettlement();
 };

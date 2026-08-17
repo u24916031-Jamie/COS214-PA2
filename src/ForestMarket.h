@@ -4,7 +4,7 @@
 #include "Market.h"
 #include "Traveller.h"
 
-class ForestMarket : Market {
+class ForestMarket : public Market {
 
 
 public:
